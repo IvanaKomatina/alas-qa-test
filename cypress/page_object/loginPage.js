@@ -13,7 +13,7 @@ module.exports = {
         return cy.get('div[class="login_logo"]')
     },
 
-    login(userName,password) {
+    login(userName, password) {
         this.logo.should('be.visible')
         this.userName.type(userName)
         this.password.type(password)

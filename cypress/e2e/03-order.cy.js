@@ -9,13 +9,13 @@ describe('Complete the order', () => {
         cy.generateFixture()
         cy.visit('')
         loginPage.login(user.userName, user.password)
-        products.addPorductFromList()
-        navigation.cart.click()
+        products.addFirstProductFromList()
+        navigation.openCart()
     })
 
     it('Order completed successfully', () => {
         cy.fixture('faker').then(orderData => {
-            itemOrder.order(orderData.FirstName, orderData.LastName, orderData.PostalCode)
+            itemOrder.order(orderData.firstName, orderData.lastName, orderData.postalCode)
         })
     })
 })

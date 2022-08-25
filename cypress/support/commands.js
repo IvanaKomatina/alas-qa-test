@@ -28,8 +28,8 @@ Cypress.Commands.add('generateFixture', () => {
     const { faker } = require('@faker-js/faker')
 
     cy.writeFile('cypress/fixtures/faker.json', {
-        'FirstName': faker.name.firstName(),
-        'LastName': faker.name.lastName(),
-        'PostalCode': faker.address.zipCode()
+        'firstName': faker.name.firstName(),
+        'lastName': faker.name.lastName(),
+        'postalCode': faker.address.zipCode()
     })
 })

@@ -32,11 +32,11 @@ module.exports = {
         return cy.get('div').contains('Your order has been dispatched, and will arrive just as fast as the pony can get there!')
     },
 
-    order(FirstName,LastName,PostalCode) {
+    order(firstName, lastName, postalCode) {
         this.checkoutBtn.click()
-        this.firstName.type(FirstName)
-        this.lastName.type(LastName)
-        this.postalCode.type(PostalCode)
+        this.firstName.type(firstName)
+        this.lastName.type(lastName)
+        this.postalCode.type(postalCode)
         this.continueBtn.click()
         this.finishBtn.click()
         this.orderAcceptedMessage.should('be.visible')

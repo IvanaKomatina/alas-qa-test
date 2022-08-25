@@ -6,11 +6,11 @@ module.exports = {
     },
 
     get cartBadge() {
-        return cy.get('span[class="shopping_cart_badge"]').contains(1)
+        return cy.get('span[class="shopping_cart_badge"]')
     },
 
     get itemNameInList() {
-        return cy.get('a[id="item_1_title_link"]')
+        return cy.get('div[class="inventory_item_name"]')
     },
 
     get firstItemInCart() {
@@ -22,36 +22,22 @@ module.exports = {
     },
 
     get removeItem() {
-        return cy.get('button[class="btn btn_secondary btn_small cart_button"]').eq(0)
+        return cy.get('button[class="btn btn_secondary btn_small cart_button"]')
     },
 
-    addPorductFromList() {
+    addFirstProductFromList() {
         this.addToCartBtn.eq(0).click()
         this.cartBadge.should('be.visible')
     },
 
     addProductFromTheDetailsPage() {
-        this.addToCartBtn.eq(0).click()
-        this.itemNameInList.click()
+        this.itemNameInList.eq(2).click()
         this.addToCartBtn.click()
+        this.cartBadge.should('be.visible')
     },
 
-    openCart() {
-        this.addToCartBtn.eq(0).click()
-        this.itemNameInList.click()
-        this.addToCartBtn.click()
-        navigation.cart.click()
-        this.firstItemInCart.should('be.visible',)
-        this.secondItemInCart.should('be.visible',)
-    },
-
-    removeItemFromCart() {
-        this.addToCartBtn.eq(0).click()
-        this.itemNameInList.click()
-        this.addToCartBtn.click()
-        navigation.cart.click()
-        this.removeItem.click()
-        this.cartBadge.should('have.text', '1',)
-        this.firstItemInCart.should('be.visible', )
+    removeFirstItemFromCart() {
+        this.removeItem.eq(0).click()
     }
+
 }
