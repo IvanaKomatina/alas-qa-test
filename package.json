@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "test": "cypress open"
+  },
+  "name": "alas-qa-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@faker-js/faker": "6",
+    "cypress": "^10.6.0"
+  }
+}
