@@ -1,11 +1,11 @@
 module.exports = {
 
     get loginBtn() {
-        return cy.get('input[id="login-button"]')
+        return cy.get('input[data-test="login-button"]')
     },
 
     get cart() {
-        return cy.get('a[class="shopping_cart_link"]')
+        return cy.get('div[id="shopping_cart_container"]')
     }
 
 }

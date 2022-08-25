@@ -2,11 +2,11 @@ import navigation from "../page_object/navigation.js"
 module.exports = {
 
     get userName() {
-        return cy.get('input[id="user-name"]')
+        return cy.get('input[data-test="username"]')
     },
 
     get password() {
-        return cy.get('input[id="password"]')
+        return cy.get('input[data-test="password"]')
     },
 
     get logo() {
