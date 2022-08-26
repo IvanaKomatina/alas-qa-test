@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "test": "cypress open"
+    "cypress-open": "cypress open",
+    "cypress-run-headless": "cypress run",
+    "cypress-run-headed": "cypress run --headed"
   },
   "name": "alas-qa-test",
   "version": "1.0.0",
